@@ -1,0 +1,17 @@
+.contactForm {
+  display: flex;
+}
+
+.contactLabel {
+  font-weight: bold;
+}
+
+.contactInput {
+  width: 327px;
+  margin-right: 20px;
+  padding: 0;
+}
+
+.buttonAdd {
+  padding: 40px;
+}
