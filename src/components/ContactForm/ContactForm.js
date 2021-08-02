@@ -1,10 +1,14 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import Fab from '@material-ui/core/Fab';
+
 import AddIcon from '@material-ui/icons/Add';
+import Button from '@material-ui/core/Button';
 
 import s from './ContactForm.module.css';
+
+
+
 
 const INITIAL_STATE = {
   name: '',
@@ -34,7 +38,8 @@ class ContactForm extends Component {
   };
 
   render() {
-    const { name, number } = this.state;
+      const { name, number } = this.state;
+      
     return (
       <form className={s.contactForm} onSubmit={this.handleSubmit}>
         <label className={s.contactLabel} htmlFor={this.nameInputId}>
@@ -66,10 +71,14 @@ class ContactForm extends Component {
         />
 
          
-            <Fab className={s.buttonAdd} color="primary" aria-label="add" type="submit">
-                
-        <AddIcon />
-      </Fab>
+            <div className ={s.btnContainer}>
+                       
+            <button  className={s.buttonAdd}  aria-label="add" type="submit">
+   <AddIcon />
+</button>
+     </div>
+       
+    
         
       </form>
     );

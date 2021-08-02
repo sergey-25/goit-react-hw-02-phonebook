@@ -1,5 +1,6 @@
 .contactForm {
   display: flex;
+  flex-flow: wrap;
 }
 
 .contactLabel {
@@ -9,9 +10,14 @@
 .contactInput {
   width: 327px;
   margin-right: 20px;
-  padding: 0;
+  padding: 10px;
 }
 
 .buttonAdd {
-  padding: 40px;
+  padding: 10px 50px;
+  background-color: blue;
+}
+.btnContainer {
+  margin-top: 30px;
+  margin-left: 395px;
 }
