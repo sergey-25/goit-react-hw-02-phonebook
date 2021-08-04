@@ -8,6 +8,7 @@
 }
 
 .filterInput {
-  min-width: 540px;
+  min-width: 327px;
   margin-left: 5px;
+  padding: 10px;
 }

@@ -19,27 +19,21 @@ class App extends Component {
     filter: '',
   };
 
-  formSubmitHandler = ({ name, number }) => {
-    const contact = {
-      id: uuidv4(),
-      name,
-      number,
-    };
-
-    if (name.trim() === '' || number.trim() === '') {
-      toast.error('Please, enter Name and Number', { position: 'top-center' });
-      return;
+    formSubmitHandler = data => {
+    if (this.state.contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
+      alert(`${data.name} is already in contacts`);
+      return
+    } else if (data.name === ''){
+      alert(`Name field are empty`);
+      return
+    } else if (data.number === ''){
+      alert(`Number field are empty`);
+      return
     }
+    
+    this.setState({ contacts: [{ name: data.name, id: uuidv4(), number: data.number }, ...this.state.contacts,] })
+  }
 
-    if (this.state.contacts.find(({ name }) => name === contact.name)) {
-      toast.warn(`${name} is already in contacts`);
-      return;
-    }
-
-    this.setState(({ contacts }) => ({
-      contacts: [contact, ...contacts],
-    }));
-  };
 
   handleFilterChange = e => {
     if (this.state.contacts.length <= 2) {
